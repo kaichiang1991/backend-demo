@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Content from './components/Content'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import SideBar from './components/SideBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'element-theme-default';
+
+export default class App extends Component {
+
+    state = {
+        title: '標題',
+        navOptions: [
+            {id: 'upload', icon: 'upload', title: '上傳', path: '/upload'},
+            {id: 'select', icon: 'search', title: '選擇', path: '/select'}
+        ]
+    }
+
+    render() {
+        const {title, navOptions} = this.state
+
+        return (
+            <div>
+                <Header title={title}/>
+                <div id="wrapper">
+                    <SideBar navOptions={navOptions}/>
+                    <Content navOptions={navOptions}/>
+                </div>
+                <Footer/>
+            </div>
+        )
+    }
 }
-
-export default App;
