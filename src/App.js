@@ -6,26 +6,25 @@ import Header from './components/Header'
 import SideBar from './components/SideBar'
 
 import 'element-theme-default';
+import store from './redux/store'
 
 export default class App extends Component {
 
     state = {
-        title: '標題',
-        navOptions: [
-            {id: 'upload', icon: 'upload', title: '上傳', path: '/upload'},
-            {id: 'select', icon: 'search', title: '選擇', path: '/select'}
-        ]
+        title: '標題'
     }
 
     render() {
-        const {title, navOptions} = this.state
+        const {title} = this.state
+
+        const {options} = store.getState()
 
         return (
             <div>
                 <Header title={title}/>
                 <div id="wrapper">
-                    <SideBar navOptions={navOptions}/>
-                    <Content navOptions={navOptions}/>
+                    <SideBar/>
+                    <Content navOptions={options}/>
                 </div>
                 <Footer/>
             </div>

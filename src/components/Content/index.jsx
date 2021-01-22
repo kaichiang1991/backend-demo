@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
+import store from '../../redux/store'
 import ChooseFile from '../pages/ChooseFiile'
 import Upload from '../pages/Upload'
 import './index.css'
@@ -11,7 +12,8 @@ const compMap = {
 
 export default class Content extends Component {
     render() {
-        const {navOptions: options} = this.props
+        const {options} = store.getState()
+
         return (
             <div id="content">
                 <Switch>
