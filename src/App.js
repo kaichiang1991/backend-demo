@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
-import Content from './components/Content'
+import Content from './containers/Content'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import SideBar from './components/SideBar'
+import SideBar from './containers/SideBar'
 
 import 'element-theme-default';
 import store from './redux/store'

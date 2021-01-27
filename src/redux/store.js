@@ -1,4 +1,8 @@
-import { createStore } from "redux";
-import subTitleReducer from "./subTitle_reducer";
+import { createStore, applyMiddleware, compose } from "redux";
+import reducer from './reducers'
+import { routerMiddleware } from 'react-router-redux'
+import thunk from 'redux-thunk'
+import history from 'history/browser'
 
-export default createStore(subTitleReducer)
+export const _history = history
+export default createStore(reducer, applyMiddleware(thunk))
