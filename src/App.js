@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Content from './containers/Content'
 import Footer from './components/Footer'
-import Header from './components/Header'
+import Header from './containers/Header'
 import SideBar from './containers/SideBar'
 
 import 'element-theme-default';
@@ -16,18 +16,17 @@ export default class App extends Component {
 
     render() {
         const {title} = this.state
-
         const {options} = store.getState()
 
         return (
-            <div>
-                <Header title={title}/>
+            <>
+                <Header/>
                 <div id="wrapper">
                     <SideBar/>
                     <Content navOptions={options}/>
                 </div>
                 <Footer/>
-            </div>
+            </>
         )
     }
 }

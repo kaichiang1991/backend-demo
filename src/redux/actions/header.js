@@ -1,0 +1,1 @@
+export const changeTitle = (type, data) => ({type, data})
