@@ -1,7 +1,17 @@
 .fixed-header{
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #58B7FF;
-    width: 100%;
+    width: calc(100% - 200px);
+    font-size: 20px;
+}
+
+.home-tag{
+    text-decoration: none;
+    color: #324057;
+}
+
+.home-tag:hover{
+    color: #99A9BF;
 }

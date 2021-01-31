@@ -1,5 +1,12 @@
-.sidebar{
+.side-bar{
     float: left;
     height: 100%;
     min-width: 200px;
+}
+
+.side-bar-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
